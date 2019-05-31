@@ -1,5 +1,7 @@
 package dev;
 
+import java.io.IOException;
+
 import com.github.lalyos.jfiglet.FigletFont;
 
 /**
@@ -9,9 +11,13 @@ import com.github.lalyos.jfiglet.FigletFont;
 public class App {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
-        
-        String asciiArt = FigletFont.convertOneLine("App");
+        String asciiArt="";
+		try {
+			asciiArt = FigletFont.convertOneLine("App");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         System.out.println(asciiArt);
     }
 }
